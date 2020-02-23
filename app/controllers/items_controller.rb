@@ -6,11 +6,7 @@ class ItemsController < ApplicationController
 def index
   @items = Item.all
   respond_to do |format|
-    format.xlsx {
-      response.headers[
-        'Content-Disposition'
-      ] = "attachment; filename=items.xlsx"
-    }
+    export_xlsx(format,'arquivo01')
     format.html { render :index }
   end
 end
