@@ -1,15 +1,23 @@
 class ItemsController < ApplicationController
+  include ExportFilesHelper
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
-def index
-  @items = Item.all
-  respond_to do |format|
-    export_xlsx(format,'arquivo01')
-    format.html { render :index }
+  def index
+    @items = Item.all
+
+    if params[:format].eql?('xlsx')
+      header_xlsx = ['nome','quantidade']
+      body_xlsx   = @items.pluck(:name, :quantity)
+    end
+
+    respond_to do |format|
+      export_xlsx(format, 'items_exportacao_xlsx', header_xlsx, body_xlsx) if params[:format].eql?('xlsx')
+      format.html { render :index }
+    end
   end
-end
 
   # GET /items/1
   # GET /items/1.json
