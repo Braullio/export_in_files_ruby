@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
+<br><br><br>
 
 <h1>Items</h1>
+<%=
+  link_to 'Download as Excel',
+  items_path(format: :xlsx)
+%>
 
+<br><br><br>
 <table>
   <thead>
     <tr>
