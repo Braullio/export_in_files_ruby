@@ -1,24 +1,10 @@
-# README
+# It's repository by created for document the code for export files in ruby
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Documented
+  - Xlsx
 
-Things you may want to cover:
+<br>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Not documented
+  - PDF
+  - DOCX
