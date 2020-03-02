@@ -23,7 +23,8 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'axlsx_rails'
 
 # PDF
-
+gem 'wkhtmltopdf-binary', '~> 0.12.3'
+gem 'pdfkit', '~> 0.8.2'
 
 
 
