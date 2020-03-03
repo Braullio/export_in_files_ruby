@@ -23,9 +23,6 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'axlsx_rails'
 
 # PDF
-gem 'pdfkit'
-gem 'render_anywhere'
-gem 'wkhtmltopdf-binary'
 gem 'prawn'
 gem 'prawn-table'
 
