@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
         table_data = Array.new
         table_data << ["Product name", "Product category"]
         @items.each { |p| table_data << [p.name, p.quantity] }
-        pdf.table(table_data, :width => 500, :cell_style => { :inline_format => true })
-        send_data pdf.render, filename: 'test.pdf', type: :pdf, :disposition => 'inline'
+        pdf.table(table_data, width: 500, cell_style: { inline_format: true })
+        send_data pdf.render, filename: "contract-#{Time.now.to_i}.pdf", type: :pdf, disposition: 'inline'
       end
     end
   end
