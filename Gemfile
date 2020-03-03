@@ -23,8 +23,12 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'axlsx_rails'
 
 # PDF
+# Format.pdf no controller
 gem 'prawn'
 gem 'prawn-table'
+# Export in alter file
+gem 'wkhtmltopdf-binary', '~> 0.12.3'
+gem 'pdfkit', '~> 0.8.2'
 
 
 group :development, :test do
