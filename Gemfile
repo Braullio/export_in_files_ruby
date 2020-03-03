@@ -26,7 +26,8 @@ gem 'axlsx_rails'
 gem 'pdfkit'
 gem 'render_anywhere'
 gem 'wkhtmltopdf-binary'
-
+gem 'prawn'
+gem 'prawn-table'
 
 
 group :development, :test do
