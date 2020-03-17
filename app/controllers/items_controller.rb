@@ -16,6 +16,14 @@ class ItemsController < ApplicationController
     respond_to do |format|
       export_xlsx(format, 'items_exportacao_xlsx', header_xlsx, body_xlsx) if params[:format].eql?('xlsx')
       format.html { render :index }
+      format.pdf do
+        pdf = Prawn::Document.new
+        table_data = Array.new
+        table_data << ["Product name", "Product category"]
+        @items.each { |i| table_data << [i.name, i.quantity] }
+        pdf.table(table_data, width: 500, cell_style: { inline_format: true })
+        send_data pdf.render, filename: "contract-#{Time.now.to_i}.pdf", type: :pdf, disposition: 'inline'
+      end
     end
   end
 
